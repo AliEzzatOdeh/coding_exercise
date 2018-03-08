@@ -13,7 +13,7 @@ def index(request):
 
 def offers(request):
     offers_manager = OffersManager("https://offersvc.expedia.com/offers/v2/getOffers?scenario=deal-finder&page=foo&uid=foo&productType=Hotel") 
-    hotel_offers = offers_manager.get_offer("")
+    hotel_offers = offers_manager.get_offers("")
     return render(
         request,
         'index.html'#,
