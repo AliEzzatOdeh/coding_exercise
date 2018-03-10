@@ -1,6 +1,6 @@
-My example requires Python3.6, I assumed tha the customer will search for a hotel offer, by the city, start date and endate.
+My example requires Python3.6, I assumed tha the customer will search for a hotel offer, by the city, start date and end date.
 The application handles the count for the days of stay, the application should display a list of offers with links to Expedia 
-websie to book the hotel, I have choosen to show for each offer an image along with the name, the price per night, 
+website to book the hotel, I have choosen to show for each offer an image along with the name, the price per night, 
 total price, hotel star rating and a booking link.
 
 In order to run the example follow instructions below, I advice using virtualenv for running the example:
