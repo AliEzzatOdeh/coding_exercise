@@ -2,18 +2,24 @@
 {% block content %}
 <div class="main-content">     
     <ul class="offers-list">
-        {% for offer in offers %}
-            <li class="offer-item">
-                <img class="hotel-image" src="{{offer.image_url}}">
-                <div class="hotel-info">
-                    <div class="hotel-name"><h3>{{offer.name}}</h3></div> 
-                    <div class="hotel-info-field">Total Price: {{offer.total_price}} {{offer.currency}}</div>
-                    <div class="hotel-info-field">Price per night: {{offer.average_price_per_night}} {{offer.currency}}</div>
-                    <div class="hotel-info-field">Hotel Stars: {{offer.star_rating}}</div>
-                    <div class="hotel-info-field"><a href="{{offer.website_url}}">Book Now with Expedia</a></div>
-                </div>
-            </li>
-        {% endfor %}
+    
+        {% if offers %}
+                   
+            {% for offer in offers %}
+                <li class="offer-item">
+                    <img class="hotel-image" src="{{offer.image_url}}">
+                    <div class="hotel-info">
+                        <div class="hotel-name"><h3>{{offer.name}}</h3></div> 
+                        <div class="hotel-info-field">Total Price: {{offer.total_price}} {{offer.currency}}</div>
+                        <div class="hotel-info-field">Price per night: {{offer.average_price_per_night}} {{offer.currency}}</div>
+                        <div class="hotel-info-field">Hotel Stars: {{offer.star_rating}}</div>
+                        <div class="hotel-info-field"><a href="{{offer.website_url}}">Book Now with Expedia</a></div>
+                    </div>
+                </li>
+            {% endfor %}
+        {% else %}
+        <li class="offer-item">Sorry, No match was found.</li>
+        {% endif %}
     </ul>
 </div>
 {% endblock %}

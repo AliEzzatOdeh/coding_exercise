@@ -32,18 +32,23 @@ function validateStartAndEndDatesDifferences(){
 function validateForm() {
     var isValid = true;
 
+    var destinaionValue = document.forms["OfferInfoForm"]["destinationName"].value;
+    if (endDateValue == "") {
+        alert("Destination must be filled");
+        isValid = false;
+    } 
+
     var startDateValue = document.forms["OfferInfoForm"]["minTripStartDate"].value;
     if (startDateValue == "") {
-        alert("Start date must be filled out");
+        alert("Start date must be filled");
         isValid = false;
     }
 
     var endDateValue = document.forms["OfferInfoForm"]["endDate"].value;
     if (endDateValue == "") {
-        alert("End date must be filled out");
+        alert("End date must be filled");
         isValid = false;
     }
-
 
     if(isValid){
         isValid = validateStartAndEndDatesDifferences();

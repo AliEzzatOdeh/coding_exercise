@@ -16,8 +16,6 @@ input {
     margin-top: 5px;
     margin-bottom: 5px;
     display:inline-block;
-    *display: inline;     /* for IE7*/
-    zoom:1;              /* for IE7*/
     vertical-align:middle;
     margin-left:20px
 }
@@ -164,6 +162,20 @@ label {
 .hotel-info-field{
     margin-bottom: 10px;    
 }
+
+.city-label{
+    margin-right: 68px;
+}
+
+.city-input{
+    width: 142px;
+    font-size: 17px;
+}
+
+.end-date-label {
+    margin-right: 19px;
+}
+
 .days-input {
     width: 142px;
     font-size: 17px;

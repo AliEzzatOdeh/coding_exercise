@@ -9,7 +9,7 @@
     </title>
 
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
-    <link rel='stylesheet' href='{% static "css/style.css" %}' />
+    <link rel='stylesheet' href='{% static "css/style.css" %}' /> 
 
 </header>
 
@@ -26,12 +26,14 @@
         <div class="container">
             <div class="info-menu">
                     <form name="OfferInfoForm" class="info-form" method="get" action="{% url 'offers' %}" onsubmit="return validateForm()">
-                        
+                        <div class="info-form-field">
+                            <label class="city-label">City</label><input id="destinationName" class="city-input" name="destinationName" type="text" value="{{destination_name}}" />
+                        </div>                        
                         <div class="info-form-field">
                             <label>Start Date</label><input id="startDate" name="minTripStartDate" type="date" value="{{start_date}}" />
                         </div>
                         <div class="info-form-field">
-                            <label>  End Date</label><input id="endDate" name="endDate" type="date" onchange="validateStartAndEndDatesDifferences()" value="{{end_date}}"/>
+                            <label class="end-date-label">End Date</label><input id="endDate" name="endDate" type="date" onchange="validateStartAndEndDatesDifferences()" value="{{end_date}}"/>
                         </div>
                         <div class="info-form-field">
                             <label>Days of Stay</label><input id="lengthOfStay" class="days-input" name="lengthOfStay" type="text" readonly value="{{length_of_stay}}"/>
@@ -52,6 +54,7 @@
         </div>
     </div>
 </body>
+
 <script src = '{% static "js/script.js" %}'></script>
 
 </html>

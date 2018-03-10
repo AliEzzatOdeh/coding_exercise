@@ -6,7 +6,7 @@ class OffersManager:
 	START_DATE = "minTripStartDate"
 	END_DATE = "endDate"
 	LENGTH_OF_STAY = "lengthOfStay"
-	
+	DESTINATION_NAME = "destinationName"
 	OFFERS = 'offers'
 	HOTEL = 'Hotel'
 	HOTEL_INFO = 'hotelInfo'
@@ -43,7 +43,9 @@ class OffersManager:
 			if(self.START_DATE in get_request_params):
 				created_str += "&%s=%s" % (self.START_DATE , get_request_params[self.START_DATE])
 			if(self.LENGTH_OF_STAY in get_request_params):
-				created_str += "&%s=%s" % (self.LENGTH_OF_STAY , get_request_params[self.LENGTH_OF_STAY])    				
+				created_str += "&%s=%s" % (self.LENGTH_OF_STAY , get_request_params[self.LENGTH_OF_STAY]) 
+			if(self.DESTINATION_NAME in get_request_params):
+    				created_str += "&%s=%s" % (self.DESTINATION_NAME , get_request_params[self.DESTINATION_NAME])				   				
     			
 		return created_str
 
