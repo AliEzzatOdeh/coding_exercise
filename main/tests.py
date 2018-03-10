@@ -9,6 +9,6 @@ class OffersTestCase(TestCase):
 
     def test_check_url_return_offers(self):
         zero_count = 0
-        offers = self.offers_manager.get_offers("")
+        offers = self.offers_manager.get_offers([])
         print (len(offers))
         self.assertNotEqual(zero_count, len(offers))

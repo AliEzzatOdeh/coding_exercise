@@ -3,7 +3,9 @@ import json
 from .hotel_offer import HotelOffer
 
 class OffersManager:	
-	
+	START_DATE = "minTripStartDate"
+	LENGTH_OF_STAY = "lengthOfStay"
+
 	OFFERS = 'offers'
 	HOTEL = 'Hotel'
 	HOTEL_INFO = 'hotelInfo'
@@ -20,11 +22,12 @@ class OffersManager:
 	def __init__(self, initial_base_url):
 		self.base_url = initial_base_url
 	
-	def get_offers(self, params):
+	def get_offers(self, get_request_params):
 		offers = []
 		try:
+			params = self.create_query_params_str(get_request_params)
 			header = { 'User-Agent' : 'aliezzat' }
-			req = Request(self.base_url, headers=header)
+			req = Request(self.base_url + params, headers=header)
 			serialized_data = urlopen(req).read()
 			data = json.loads(serialized_data)
 			offers = self.parse_api_json(data)
@@ -33,6 +36,16 @@ class OffersManager:
 
 		return offers
 	
+	def create_query_params_str(self,get_request_params):
+		created_str = ""
+		if len(get_request_params)!= 0 :
+			if(self.START_DATE in get_request_params):
+				created_str += "&%s=%s" % (self.START_DATE , get_request_params[self.START_DATE])
+			if(self.LENGTH_OF_STAY in get_request_params):
+				created_str += "&%s=%s" % (self.LENGTH_OF_STAY , get_request_params[self.LENGTH_OF_STAY])    				
+    			
+		return created_str
+
 	def parse_api_json(self, data):
 		hotel_offers = []
 		

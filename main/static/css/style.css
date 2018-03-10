@@ -64,14 +64,14 @@ label {
 .container {
     display: flex;
     height: 100%;
-    flex-flow: row;
+    flex-flow: column;
     justify-content: space-between;
 }
 
-.side-menu {
+.info-menu {
     display: flex;
     flex-flow: column;
-    flex: 1;
+    flex: 2;
     justify-content: flex-start;
     background-color: #2d353c;
     height: 100%;
@@ -80,6 +80,15 @@ label {
     border-right-color: black;
     font-size: 25px;  
     user-select: none;
+    margin: 20px;
+    width: 600px;
+    
+    text-align:center;
+}
+
+.search-button {
+    font-size: 20px;
+    padding: 5px;
 }
 
 .side-menu-element {

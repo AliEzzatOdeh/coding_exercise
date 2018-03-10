@@ -24,8 +24,17 @@
         </div>
 
         <div class="container">
-            <div class="side-menu">
-                <ul>
+            <div class="info-menu">
+                    <form name="OfferInfoForm" method="get" action="{% url 'offers' %}" onsubmit="return validateForm()">
+                        <div>
+                            <label>Start Date</label><input id="startDate" name="minTripStartDate" type="date" />
+                            <label>End Date</label><input id="endDate" name="endDate" type="date" onchange="validateStartAndEndDatesDifferences()"/>
+                            <label>Length of Stay</label><input id="lengthOfStay" name="lengthOfStay" type="text" readonly />
+                        </div>
+                        <input type="submit" value="Search" class="search-button" />
+                        
+                    </form>
+                    <!--<ul>
                     <li class="side-menu-element">
                         <label class="category-label">Risks</label>
 
@@ -33,7 +42,7 @@
                                 <li class="side-menu-sub-element"></li>
                         </ul>
                     </li>
-                </ul>
+                </ul>-->
             </div>
 
             <div class="main-content">
@@ -52,7 +61,7 @@
     </div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src = '{% static "script.js" %}'></script>
+<script src = '{% static "js/script.js" %}'></script>
 
 
 </html>
