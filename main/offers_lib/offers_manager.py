@@ -4,8 +4,9 @@ from .hotel_offer import HotelOffer
 
 class OffersManager:	
 	START_DATE = "minTripStartDate"
+	END_DATE = "endDate"
 	LENGTH_OF_STAY = "lengthOfStay"
-
+	
 	OFFERS = 'offers'
 	HOTEL = 'Hotel'
 	HOTEL_INFO = 'hotelInfo'
@@ -58,6 +59,11 @@ class OffersManager:
 			hotel_offer.average_price_per_night = element[self.HOTEL_PRICING_INFO][self.AVERAGE_PRICE_VALUE]
 			hotel_offer.total_price = element[self.HOTEL_PRICING_INFO][self.TOTAL_PRICE_VALUE]
 			hotel_offer.currency = element[self.HOTEL_PRICING_INFO][self.CURRENCY]
+			
+			if hotel_offer.website_url != "":
+				hotel_offer.website_url = hotel_offer.website_url.replace("%3A",":")
+				hotel_offer.website_url = hotel_offer.website_url.replace("%2F","/")				
+			
 			hotel_offers.append(hotel_offer)
 		
 		return hotel_offers

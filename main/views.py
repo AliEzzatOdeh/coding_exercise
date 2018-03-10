@@ -11,6 +11,6 @@ def offers(request):
     hotel_offers = offers_manager.get_offers(request.GET)
     return render(
         request,
-        'index.html'#,
-        #context={'num_books':num_books,'num_instances':num_instances,'num_instances_available':num_instances_available,'num_authors':num_authors},
+        'offers.html',
+        context={'offers':hotel_offers, 'start_date':request.GET.get(offers_manager.START_DATE), 'end_date':request.GET.get(offers_manager.END_DATE), 'length_of_stay':request.GET.get(offers_manager.LENGTH_OF_STAY)}
     )
