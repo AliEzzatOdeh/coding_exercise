@@ -8,5 +8,5 @@ Python, I was able to accomplish what I wanted in this short time even though my
 hard for me to find more time. 
 
 My application needs some enhancements that I would like to add if I had more time, like validations for fields are currntly alert 
-messages they should be changed, also base url for the api is hard coded it should be a confuguration and finaly an auto complete 
+messages they should be changed, also base url for the api is hard coded it should be a confuguration, add time picker that is supported by all browsers, add more options for user to search for an offer and finaly an auto complete 
 support for city name.  
