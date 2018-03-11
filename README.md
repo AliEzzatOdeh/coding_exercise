@@ -13,3 +13,11 @@ In order to run the example follow instructions below, I advice using virtualenv
 ISSUES:
 I used date inputs for ease of use for user, but not all browsers support it e.g. "Firefox", so user should handle inserting 
 the valid format in case he/she unsupported browser, it should work fine in Chrome.
+
+LIVE EXAMPLE:
+This is my first time using Heroku, I found it interesting, here is a live example of the application: 
+https://ali-ezzat-coding-example.herokuapp.com/
+
+Travis-ci:
+Also it is my first time using , my application builds successfully using it, here is a link: 
+https://travis-ci.org/AliEzzatOdeh/coding_exercise
